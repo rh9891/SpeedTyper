@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.wrapper {
+  text-align: center;
+  position: relative;
+}
+
+.landing-body {
+  font-size: 1rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  height: 100%;
+  /* City vector image created by wirestock on www.freepik.com. */
+  background-image: url(/images/futuristic-symmetry.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #ffffff;
+}
+
+.start-page-title {
+  font-family: "Orbitron", sans-serif;
+  font-size: 5rem;
+  text-shadow: 0 0 3px #fd1d1d, 0 0 5px #e4732a;
+  color: #c25b19;
+}
+
+.start-game-link {
+  text-decoration: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  font-family: "Orbitron", sans-serif;
+  font-size: 20px;
+  position: absolute;
+  border: 1px solid green;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transform: skewX(-10deg);
+  height: 50px;
+  width: 200px;
+  border-radius: 20px 5px 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-weight: 600px;
+  text-shadow: 0 0 20px #ffffff;
+  -webkit-animation: breath2 2s 0.5s infinite alternate;
+  animation: breath2 2s 0.5s infinite alternate;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.button:before {
+  content: "";
+  display: block;
+  width: calc(100% - 22px);
+  height: calc(50px - 8px);
+  -webkit-animation: breath 2s infinite alternate;
+  animation: breath 2s infinite alternate;
+  left: 10px;
+  top: 3px;
+  position: absolute;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 15px 3px 15px 3px;
+}
+
+.button.start-game-button {
+  border-color: #ffeca8;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(194, 92, 25),
+    rgba(226, 118, 10)
+  );
+  box-shadow: 0 0 70px rgba(255, 138, 48, 0.6),
+    0 5px 20px rgba(255, 138, 48, 0.6), inset 0 1px #ffeca8,
+    inset 0 -1px #ffeca8;
+  color: #151733;
+}
+
+.button.start-game-button:before {
+  box-shadow: inset 0 0 30px 0 #ffeca8;
+}
+
+.button:hover.start-game-button {
+  box-shadow: 0 0 70px rgba(255, 138, 48, 0.8),
+    0 5px 20px rgba(255, 138, 48, 0.8), inset 0 1px #c25b19,
+    inset 0 -1px #c25b19;
+}
+
+.button:hover.start-game-button:before {
+  box-shadow: inset 0 0 50px 0 #c25b19;
+}
+
+@keyframes breath {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0.95);
+  }
+}
+
+@-webkit-keyframes breath2 {
+  0% {
+    transform: skewX(-10deg) scaleX(1);
+  }
+  100% {
+    transform: skewX(-10deg) scaleX(0.95);
+  }
+}
+
+@keyframes breath2 {
+  0% {
+    transform: skewX(-10deg) scaleX(1);
+  }
+  100% {
+    transform: skewX(-10deg) scaleX(0.95);
+  }
+}
