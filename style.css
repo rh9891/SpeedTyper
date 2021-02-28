@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
+/* CSS styling for index.html (landing page). */
 .wrapper {
   text-align: center;
   position: relative;
@@ -128,4 +133,121 @@
   100% {
     transform: skewX(-10deg) scaleX(0.95);
   }
+}
+
+/* CSS styling for game.html (game page). */
+.game-body {
+  height: 100%;
+  /* City vector image created by wirestock on www.freepik.com. */
+  background-image: url(/images/futuristic-symmetry.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #151733;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Orbitron", sans-serif;
+  color: #c25b19;
+}
+
+#button {
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 5px 15px;
+}
+
+select {
+  font-family: "Orbitron", sans-serif;
+  width: 200px;
+  padding: 5px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+  background-color: #fed8b1;
+}
+
+select:focus,
+button:focus {
+  outline: 0;
+}
+
+.settings-button {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+
+.settings {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #151733;
+  height: 70px;
+  color: #c25b19;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.settings-hide {
+  transform: translateY(-100%);
+}
+
+.container {
+  background-color: #151733;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  text-align: center;
+  width: 500px;
+}
+
+.container h2 {
+  background-color: #242757;
+  padding: 8px;
+  border-radius: 4px;
+  margin: 0 0 40px;
+}
+
+.container h1 {
+  margin: 0;
+}
+
+input {
+  border: 0;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 300px;
+  padding: 12px 20px;
+  margin-top: 10px;
+}
+
+/* Chrome/Opera/Safari */
+::-webkit-input-placeholder {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Firefox 19+ */
+::-moz-placeholder {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* IE 10+ */
+:-ms-input-placeholder {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Firefox 18- */
+:-moz-placeholder {
+  font-family: "Orbitron", sans-serif;
 }
