@@ -53,3 +53,11 @@ let time = 10;
 getRandomWord = () => {
   return words[Math.floor(Math.random() * words.length)];
 };
+
+// Function to add word to the DOM.
+addWordToDOM = () => {
+  randomWord = getRandomWord();
+  word.innerHTML = randomWord;
+};
+
+addWordToDOM();
