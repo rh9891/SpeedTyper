@@ -54,10 +54,21 @@ getRandomWord = () => {
   return words[Math.floor(Math.random() * words.length)];
 };
 
-// Function to add word to the DOM.
+// Function to display random word onto DOM.
 addWordToDOM = () => {
   randomWord = getRandomWord();
   word.innerHTML = randomWord;
 };
 
 addWordToDOM();
+
+// Adds event listener to the input field, so that the user-inputted word or phrase is targeted. If the displayed word and the input phrase are the same, then a new word is displayed on the DOM and the input field is cleared.
+text.addEventListener("input", (event) => {
+  const insertedText = event.target.value;
+  if (insertedText === randomWord) {
+    addWordToDOM();
+
+    // Clears the input field.
+    event.target.value = "";
+  }
+});
