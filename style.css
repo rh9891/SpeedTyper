@@ -170,6 +170,12 @@
   opacity: 0;
   visibility: hidden;
   transform: scale(1.1);
+  /* City vector image created by wirestock on www.freepik.com. */
+  background-image: url(/images/futuristic-symmetry.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .show-modal {
@@ -185,25 +191,44 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 1rem 1.5rem;
-  width: 24rem;
-  border-radius: 0.5rem;
+  background-color: #151733;
+  padding: 20px;
+  width: 500px;
+  border-radius: 4px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  font-family: "Orbitron", sans-serif;
+  color: #c25b19;
+}
+
+.modal-content h1 {
+  text-align: center;
+  margin: 0;
+}
+
+.modal-content p {
+  text-align: justify;
 }
 
 /* CSS styling for the close button. */
 .close-button {
   float: right;
+  font-size: 2rem;
   width: 1.5rem;
-  line-height: 1.5rem;
+  line-height: 1rem;
   text-align: center;
   cursor: pointer;
   border-radius: 0.25rem;
-  background-color: lightgray;
 }
 
 .close-button:hover {
-  background-color: darkgray;
+  color: #35caed;
+}
+
+/* Breakpoint for responsiveness across devices. */
+@media only screen and (max-width: 600px) {
+  .modal-content {
+    width: 300px;
+  }
 }
 
 /* CSS styling for game.html (game page). */
