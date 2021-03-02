@@ -108,5 +108,9 @@ text.addEventListener("input", (event) => {
 
     // Clears the input field.
     event.target.value = "";
+
+    time += 5;
+
+    updateTime();
   }
 });
