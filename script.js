@@ -60,13 +60,21 @@ addWordToDOM = () => {
   word.innerHTML = randomWord;
 };
 
+// Function to update the score and display it on DOM.
+updateScore = () => {
+  score++;
+  scoreElement.innerHTML = score;
+};
+
 addWordToDOM();
 
 // Adds event listener to the input field, so that the user-inputted word or phrase is targeted. If the displayed word and the input phrase are the same, then a new word is displayed on the DOM and the input field is cleared.
 text.addEventListener("input", (event) => {
   const insertedText = event.target.value;
+
   if (insertedText === randomWord) {
     addWordToDOM();
+    updateScore();
 
     // Clears the input field.
     event.target.value = "";
