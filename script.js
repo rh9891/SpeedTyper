@@ -77,7 +77,14 @@ function updateTime() {
   time--;
   timeElement.innerHTML = time + "s";
 
+  // Disables the difficulty selection once the game has started.
+  if (time < 15) {
+    document.getElementById("difficulty").disabled;
+  }
+
+  // Disables the difficulty selection once the game is over.
   if (time === 0) {
+    document.getElementById("difficulty").disabled;
     clearInterval(timeInterval);
 
     // Function to end game.
