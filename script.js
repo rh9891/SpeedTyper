@@ -56,10 +56,7 @@ let difficulty =
     : "medium";
 
 // Sets the difficulty select value to its default value or to whatever is saved in local storage.
-difficultySelect.value =
-  localStorage.getItem("difficulty") !== null
-    ? localStorage.getItem("difficulty")
-    : "medium";
+difficultySelect.value = difficulty;
 
 // On game start, calling focus method to focus on text.
 text.focus();
@@ -76,6 +73,11 @@ getRandomWord = () => {
 function updateTime() {
   time--;
   timeElement.innerHTML = time + "s";
+
+  // When the time is 5 seconds or less, it is displayed in a different color.
+  if (time < 6) {
+    timeElement.style.color = "#35caed";
+  }
 
   // Disables the difficulty selection once the game has started.
   if (time < 15) {
