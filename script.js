@@ -49,6 +49,18 @@ let score = 0;
 // Initialize the time.
 let time = 10;
 
+// Sets the difficulty to value in local storage or to the default value (medium).
+let difficulty =
+  localStorage.getItem("difficulty") !== null
+    ? localStorage.getItem("difficulty")
+    : "medium";
+
+// Sets the difficulty select value to its default value or to whatever is saved in local storage.
+difficultySelect.value =
+  localStorage.getItem("difficulty") !== null
+    ? localStorage.getItem("difficulty")
+    : "medium";
+
 // On game start, calling focus method to focus on text.
 text.focus();
 
@@ -120,3 +132,10 @@ text.addEventListener("input", (event) => {
 settingsButton.addEventListener("click", () =>
   settings.classList.toggle("hide")
 );
+
+// Event listener when selecting the settings difficulty.
+settingsForm.addEventListener("change", (event) => {
+  difficulty = event.target.value;
+
+  localStorage.setItem("difficulty", difficulty);
+});
