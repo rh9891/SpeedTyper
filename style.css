@@ -162,7 +162,7 @@
   color: #c25b19;
 }
 
-#button {
+#settings-button {
   cursor: pointer;
   font-size: 14px;
   border-radius: 4px;
@@ -205,7 +205,7 @@ button:focus {
   transition: transform 0.3s ease-in-out;
 }
 
-.settings-hide {
+.settings.hide {
   transform: translateY(-100%);
 }
 

@@ -109,8 +109,14 @@ text.addEventListener("input", (event) => {
     // Clears the input field.
     event.target.value = "";
 
+    // Appends 5 seconds to time and updates the time.
     time += 5;
 
     updateTime();
   }
 });
+
+// Event listener when clicking the settings icon.
+settingsButton.addEventListener("click", () =>
+  settings.classList.toggle("hide")
+);
