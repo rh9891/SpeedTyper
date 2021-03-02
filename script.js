@@ -121,8 +121,14 @@ text.addEventListener("input", (event) => {
     // Clears the input field.
     event.target.value = "";
 
-    // Appends 5 seconds to time and updates the time.
-    time += 5;
+    // Appends additional seconds to time (dependent on difficulty level) and updates the time.
+    if (difficulty === "hard") {
+      time += 2;
+    } else if (difficulty === "normal") {
+      time += 3;
+    } else if (difficulty === "easy") {
+      time += 5;
+    }
 
     updateTime();
   }
