@@ -54,9 +54,13 @@ THEN I am presented with a menu to toggle between three difficulty settings.
 
 ## Preview of Speed Typer
 
-The following animation demonstrates the application functionality:
+The following animation demonstrates the complete application functionality:
 
-![Speed Typer Functionality](images/speedTyperFunctionality.mp4)
+<p align="center">
+  <img src="https://github.com/rh9891/SpeedTyper/blob/master/images/speedTyperFunctionality.gif">
+</p>
+
+To download the above video file of the application functionality, you may do so [here](https://github.com/rh9891/SpeedTyper/blob/main/images/speedTyperFunctionality.mp4).
 
 ## Links
 
