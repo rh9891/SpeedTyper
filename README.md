@@ -57,7 +57,7 @@ THEN I am presented with a menu to toggle between three difficulty settings.
 The following animation demonstrates the complete application functionality:
 
 <p align="center">
-  <img src="https://github.com/rh9891/SpeedTyper/blob/master/images/speedTyperFunctionality.gif">
+  <img src="https://github.com/rh9891/SpeedTyper/blob/main/images/speedTyperFunctionality.gif">
 </p>
 
 To download the above video file of the application functionality, you may do so [here](https://github.com/rh9891/SpeedTyper/blob/main/images/speedTyperFunctionality.mp4).
