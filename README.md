@@ -32,7 +32,7 @@ SO THAT I can improve my typing speed.
 ## Features of the Application
 
 ```
-GIVEN a speed typing game
+GIVEN a typing game
 WHEN I click on the "Start Game" button
 THEN I am presented with the Speed Typer game.
 
