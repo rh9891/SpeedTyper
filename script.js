@@ -77,7 +77,7 @@ gameOver = () => {
 <h1>Sorry! Time has run out.</h1>
 <p class="final-score-message">Your final score is ${score}.</p>
 <button onClick="window.location.reload()" class="button play-again-button">Play Again</button>
-<a class="quit-link" href="/index.html"><button class="button quit-button">Quit</button></a>
+<a class="quit-link" href="index.html"><button class="button quit-button">Quit</button></a>
 `;
 
   endGameElement.style.display = "flex";
