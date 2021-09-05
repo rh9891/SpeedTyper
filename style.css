@@ -43,7 +43,8 @@
   justify-content: center;
 }
 
-.directions-link {
+.directions-link,
+.quit-link {
   text-decoration: none;
   margin: 0;
   display: flex;
@@ -76,7 +77,16 @@
 }
 
 .button.play-again-button {
-  margin-top: 8rem;
+  margin-top: 7rem;
+}
+
+.button.quit-button {
+  text-decoration: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
 }
 
 .button.directions-button {
@@ -100,7 +110,8 @@
 
 .button.start-game-button,
 .button.play-again-button,
-.button.directions-button {
+.button.directions-button,
+.button.quit-button {
   border-color: #ffeca8;
   background-image: linear-gradient(
     to bottom,
@@ -115,13 +126,15 @@
 
 .button.start-game-button:before,
 .button.play-again-button:before,
-.button.directions-button:before {
+.button.directions-button:before,
+.button.quit-button:before {
   box-shadow: inset 0 0 30px 0 #ffeca8;
 }
 
 .button:hover.start-game-button,
 .button:hover.play-again-button,
-.button:hover.directions-button {
+.button:hover.directions-button,
+.button:hover.quit-button {
   box-shadow: 0 0 70px rgba(255, 138, 48, 0.8),
     0 5px 20px rgba(255, 138, 48, 0.8), inset 0 1px #c25b19,
     inset 0 -1px #c25b19;
@@ -129,7 +142,8 @@
 
 .button:hover.start-game-button:before,
 .button:hover.play-again-button:before,
-.button:hover.directions-button:before {
+.button:hover.directions-button:before,
+.button:hover.quit-button:before {
   box-shadow: inset 0 0 50px 0 #c25b19;
 }
 
