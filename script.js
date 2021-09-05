@@ -10,35 +10,7 @@ const settingsForm = document.getElementById("settings-form");
 const difficultySelect = document.getElementById("difficulty");
 
 // Array of words for game.
-const words = [
-  "fastness",
-  "swiftness",
-  "upper",
-  "accelerate",
-  "hasten",
-  "hie",
-  "hotfoot",
-  "race",
-  "rush",
-  "hurrying",
-  "speeding",
-  "hurry",
-  "zip",
-  "quicken",
-  "velocity",
-  "ready",
-  "speedy",
-  "immediate",
-  "prompt",
-  "straightaway",
-  "agile",
-  "nimble",
-  "spry",
-  "promptly",
-  "quickly",
-  "fast",
-  "flying",
-];
+let words = [];
 
 // Initialize the word.
 let randomWord;
@@ -47,7 +19,7 @@ let randomWord;
 let score = 0;
 
 // Initialize the time.
-let time = 10;
+let time = 15;
 
 // Sets the difficulty to value in local storage or to the default value (medium).
 let difficulty =
@@ -64,10 +36,15 @@ text.focus();
 // Function to start the timer to count down.
 const timeInterval = setInterval(updateTime, 1000);
 
-// Function to generate a random word from the words array.
-getRandomWord = () => {
-  return words[Math.floor(Math.random() * words.length)];
+// Function to generate a random word from the Random Words API created by MC Naveen (https://github.com/mcnaveen/Random-Words-API).
+getRandomWord = async () => {
+  const res = await fetch("https://random-words-api.vercel.app/word");
+
+  const data = await res.json();
+
+  return data[Object.keys(data)[0]].word.toLowerCase();
 };
+getRandomWord();
 
 // Function to update the timer and display it on the DOM.
 function updateTime() {
@@ -100,14 +77,15 @@ gameOver = () => {
 <h1>Sorry! Time has run out.</h1>
 <p class="final-score-message">Your final score is ${score}.</p>
 <button onClick="window.location.reload()" class="button play-again-button">Play Again</button>
+<a class="quit-link" href="/index.html"><button class="button quit-button">Quit</button></a>
 `;
 
   endGameElement.style.display = "flex";
 };
 
 // Function to display random word onto DOM.
-addWordToDOM = () => {
-  randomWord = getRandomWord();
+addWordToDOM = async () => {
+  randomWord = await getRandomWord();
   word.innerHTML = randomWord;
 };
 
