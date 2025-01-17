@@ -72,7 +72,8 @@ THEN I am presented with a menu to toggle between three difficulty settings.
 
 The following animation demonstrates the complete application functionality:
 
-![Speed Typer Functionality]()
+![Speed Typer Functionality](https://github.com/user-attachments/assets/6363dde6-b4ca-4c91-b7a7-0bc90d444d99)
+
 
 ## Links
 
