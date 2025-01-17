@@ -1,404 +1,388 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
-  box-sizing: border-box;
-}
-
-/* CSS styling for index.html (landing page). */
-.wrapper {
-  text-align: center;
-  position: relative;
-}
-
-.landing-body {
-  font-size: 1rem;
-  line-height: 1.5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  min-height: 100vh;
-  height: 100%;
-  /* City vector image created by wirestock on www.freepik.com. */
-  background-image: url(images/futuristic-symmetry.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #ffffff;
-}
-
-.start-page-title {
-  font-family: "Orbitron", sans-serif;
-  font-size: 5rem;
-  text-shadow: 0 0 3px #fd1d1d, 0 0 5px #e4732a;
-  color: #c25b19;
-}
-
-.start-game-link {
-  text-decoration: none;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.directions-link,
-.quit-link {
-  text-decoration: none;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.button {
-  font-family: "Orbitron", sans-serif;
-  font-size: 20px;
-  position: absolute;
-  border: 1px solid green;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  transform: skewX(-10deg);
-  height: 50px;
-  width: 200px;
-  border-radius: 20px 5px 20px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  font-weight: 600px;
-  text-shadow: 0 0 20px #ffffff;
-  -webkit-animation: breath2 2s 0.5s infinite alternate;
-  animation: breath2 2s 0.5s infinite alternate;
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
-
-.button.play-again-button {
-  margin-top: 7rem;
-}
-
-.button.quit-button {
-  text-decoration: none;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 5rem;
-}
-
-.button.directions-button {
-  margin-top: 3rem;
-}
-
-.button:before {
-  content: "";
-  display: block;
-  width: calc(100% - 22px);
-  height: calc(50px - 8px);
-  -webkit-animation: breath 2s infinite alternate;
-  animation: breath 2s infinite alternate;
-  left: 10px;
-  top: 3px;
-  position: absolute;
-  background-color: transparent;
-  border: 1px solid #ffffff;
-  border-radius: 15px 3px 15px 3px;
-}
-
-.button.start-game-button,
-.button.play-again-button,
-.button.directions-button,
-.button.quit-button {
-  border-color: #ffeca8;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(194, 92, 25),
-    rgba(226, 118, 10)
-  );
-  box-shadow: 0 0 70px rgba(255, 138, 48, 0.6),
-    0 5px 20px rgba(255, 138, 48, 0.6), inset 0 1px #ffeca8,
-    inset 0 -1px #ffeca8;
-  color: #151733;
-}
-
-.button.start-game-button:before,
-.button.play-again-button:before,
-.button.directions-button:before,
-.button.quit-button:before {
-  box-shadow: inset 0 0 30px 0 #ffeca8;
-}
-
-.button:hover.start-game-button,
-.button:hover.play-again-button,
-.button:hover.directions-button,
-.button:hover.quit-button {
-  box-shadow: 0 0 70px rgba(255, 138, 48, 0.8),
-    0 5px 20px rgba(255, 138, 48, 0.8), inset 0 1px #c25b19,
-    inset 0 -1px #c25b19;
-}
-
-.button:hover.start-game-button:before,
-.button:hover.play-again-button:before,
-.button:hover.directions-button:before,
-.button:hover.quit-button:before {
-  box-shadow: inset 0 0 50px 0 #c25b19;
-}
-
-@keyframes breath {
-  0% {
-    transform: scaleX(1);
-  }
-  100% {
-    transform: scaleX(0.95);
-  }
-}
-
-@-webkit-keyframes breath2 {
-  0% {
-    transform: skewX(-10deg) scaleX(1);
-  }
-  100% {
-    transform: skewX(-10deg) scaleX(0.95);
-  }
-}
-
-@keyframes breath2 {
-  0% {
-    transform: skewX(-10deg) scaleX(1);
-  }
-  100% {
-    transform: skewX(-10deg) scaleX(0.95);
-  }
-}
-
-/* CSS styling for modal. */
-.modal {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(1.1);
-  /* City vector image created by wirestock on www.freepik.com. */
-  background-image: url(images/futuristic-symmetry.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-.show-modal {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-}
-
-/* CSS styling for modal content. */
-.modal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #151733;
-  padding: 20px;
-  width: 500px;
-  border-radius: 4px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-  font-family: "Orbitron", sans-serif;
-  color: #c25b19;
-}
-
-.modal-content h1 {
-  text-align: center;
-  margin: 0;
-}
-
-.modal-content p {
-  text-align: justify;
-}
-
-/* CSS styling for the close button. */
-.close-button {
-  float: right;
-  font-size: 2rem;
-  width: 1.5rem;
-  line-height: 1rem;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 0.25rem;
-}
-
-.close-button:hover {
-  color: #35caed;
-}
-
-/* Breakpoint for responsiveness across devices. */
-@media only screen and (max-width: 600px) {
-  .modal-content {
-    width: 300px;
-  }
-}
-
-/* CSS styling for game.html (game page). */
-.game-body {
-  height: 100%;
-  /* City vector image created by wirestock on www.freepik.com. */
-  background-image: url(images/futuristic-symmetry.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #151733;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 0;
-  font-family: "Orbitron", sans-serif;
-  color: #c25b19;
-}
-
-#settings-button {
-  cursor: pointer;
-  font-size: 14px;
-  border-radius: 4px;
-  padding: 5px 15px;
-}
-
-select {
-  font-family: "Orbitron", sans-serif;
-  width: 200px;
-  padding: 5px;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border-radius: 0;
-}
-
-select:focus,
-button:focus {
-  outline: 0;
-}
-
-.settings-button {
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
-}
-
-.settings {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #151733;
-  height: 70px;
-  color: #c25b19;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(0);
-  transition: transform 0.3s ease-in-out;
-}
-
-.settings.hide {
-  transform: translateY(-100%);
-}
-
-.container {
-  background-color: #151733;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-  position: relative;
-  text-align: center;
-  width: 500px;
-}
-
-.container h2 {
-  background-color: #242757;
-  padding: 8px;
-  border-radius: 4px;
-  margin: 0 0 40px;
-}
-
-.container h1 {
-  margin: 0;
-}
-
-input {
-  border: 0;
-  border-radius: 4px;
-  font-size: 14px;
-  width: 300px;
-  padding: 12px 20px;
-  margin-top: 10px;
+    box-sizing: border-box;
 }
 
 /* Chrome/Opera/Safari */
 ::-webkit-input-placeholder {
-  font-family: "Orbitron", sans-serif;
+    font-family: "Orbitron", sans-serif;
 }
 
 /* Firefox 19+ */
 ::-moz-placeholder {
-  font-family: "Orbitron", sans-serif;
+    font-family: "Orbitron", sans-serif;
 }
 
 /* IE 10+ */
 :-ms-input-placeholder {
-  font-family: "Orbitron", sans-serif;
+    font-family: "Orbitron", sans-serif;
 }
 
 /* Firefox 18- */
 :-moz-placeholder {
-  font-family: "Orbitron", sans-serif;
+    font-family: "Orbitron", sans-serif;
+}
+
+/* CSS styling for index.html (landing page). */
+.wrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.landing-body {
+    font-size: 1rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+    height: 100%;
+    /* City vector image created by wirestock on www.freepik.com. */
+    background-image: url(images/FuturisticSymmetry.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #ffffff;
+}
+
+.start-page-title {
+    font-family: "Orbitron", sans-serif;
+    font-size: 5rem;
+    text-shadow: 0 0 3px #fd1d1d, 0 0 5px #e4732a;
+    color: #c25b19;
+}
+
+.start-game-link {
+    text-decoration: none;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.directions-link,
+.quit-link,
+.restart-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.directions-link {
+    margin: 2rem 0 0;
+}
+
+
+button {
+    background: #c25b19;
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: "Orbitron", sans-serif;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    outline: none;
+    padding: 16px 24px;
+    position: relative;
+    text-transform: uppercase;
+
+    &:hover {
+        animation: glow 1s ease-in infinite;
+    }
+
+    &::before {
+        animation: glow 1s ease-in infinite;
+        background: #c25b19;
+        border-radius: 8px;
+        content: '';
+        filter: blur(10px);
+        opacity: .75;
+        position: absolute;
+        transition: all .3s ease-in-out;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        z-index: -1;
+    }
+
+    &:hover::before {
+        filter: blur(20px);
+        opacity: 1;
+    }
+}
+
+.button-container {
+    display: flex;
+    gap: 8px;
+}
+
+@keyframes glow {
+    0% {
+        background: #c25b19;
+    }
+    25% {
+        background: #ff8a30;
+    }
+    100% {
+        background: #c25b19;
+    }
+}
+
+/* CSS styling for modal. */
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    /* City vector image created by wirestock on www.freepik.com. */
+    background-image: url(images/FuturisticSymmetry.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+/* CSS styling for modal content. */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #151733;
+    padding: 20px;
+    width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    font-family: "Orbitron", sans-serif;
+    color: #c25b19;
+
+    h1 {
+        text-align: center;
+        margin: 0;
+    }
+
+    p {
+        text-align: justify;
+    }
+}
+
+/* CSS styling for the close button. */
+.close-button {
+    float: right;
+    font-size: 2rem;
+    width: 1.5rem;
+    line-height: 1rem;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        color: #35caed;
+    }
+}
+
+/* Breakpoint for responsiveness across devices. */
+@media only screen and (max-width: 600px) {
+    .modal-content {
+        width: 300px;
+    }
+}
+
+/* CSS styling for game.html (game page). */
+.game-body {
+    height: 100%;
+    /* City vector image created by wirestock on www.freepik.com. */
+    background-image: url(images/FuturisticSymmetry.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #151733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Orbitron", sans-serif;
+    color: #c25b19;
+}
+
+#settings-button {
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 8px;
+    padding: 5px 15px;
+}
+
+select {
+    font-family: "Orbitron", sans-serif;
+    width: 200px;
+    padding: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 0;
+}
+
+select:focus,
+button:focus {
+    outline: 0;
+}
+
+.settings-button {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+
+.settings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #151733;
+    height: 70px;
+    color: #c25b19;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.settings.hide {
+    transform: translateY(-100%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #151733;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 500px;
+
+    h1 {
+        margin: 0;
+    }
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+
+    h2 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+    }
+}
+
+input {
+    border: 0;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 300px;
+    padding: 12px 20px;
+    margin-top: 10px;
 }
 
 .score-container {
-  position: absolute;
-  top: 60px;
-  right: 20px;
+    background-color: #242757;
+    padding: 8px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
 }
 
 .time-container {
-  position: absolute;
-  top: 60px;
-  left: 20px;
+    background-color: #242757;
+    padding: 8px;
+    position: absolute;
+    top: 60px;
+    left: 20px;
 }
 
-.end-game-container {
-  background-color: inherit;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+#end-game-container, #high-score-board, #high-score-board-entry {
+    background-color: #151733;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 16px;
+
+    h1, p {
+        margin: 0;
+    }
 }
 
-.final-score-message {
-  margin-bottom: 3rem;
+#high-score-board-entry, #end-game-container {
+    gap: 16px;
 }
 
-@media screen and (max-width: 480px),
-  screen and (device-aspect-ratio: 2/3),
-  screen and (device-aspect-ratio: 40/71),
-  screen and (device-aspect-ratio: 375/667),
-  screen and (device-aspect-ratio: 16/9) {
-  .quit-link {
-    margin-top: 1rem;
-  }
-  .container {
-    width: 350px;
-  }
+#high-score-list {
+    list-style: none;
+    padding: 0;
+
+    li {
+        margin: 5px 0;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
+
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin: 0 auto;
+    background-color: #c25b19;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (max-width: 480px), screen and (device-aspect-ratio: 2/3), screen and (device-aspect-ratio: 40/71), screen and (device-aspect-ratio: 375/667), screen and (device-aspect-ratio: 16/9) {
+    .container {
+        width: 350px;
+    }
 }

@@ -1,75 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="images/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="images/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="images/favicon/favicon-16x16.png"
-    />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
-    <link rel="stylesheet" href="style.css" />
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png"/>
+    <meta name="msapplication-TileColor" content="#da532c"/>
+    <meta name="theme-color" content="#ffffff"/>
+    <link rel="stylesheet" href="style.css"/>
     <title>Speed Typer</title>
-  </head>
-  <body class="game-body">
-    <button class="settings-button" id="settings-button">
-      <i class="fas fa-cog"></i>
-    </button>
+</head>
 
-    <div class="settings" id="settings">
-      <form id="settings-form">
+<body class="game-body">
+<button class="settings-button" id="settings-button">
+    <i class="fas fa-cog"></i>
+</button>
+<div class="settings" id="settings">
+    <form id="settings-form">
         <div>
-          <label for="difficulty">Difficulty</label>
-          <select id="difficulty">
-            <option value="easy">Easy</option>
-            <option value="normal">Normal</option>
-            <option value="hard">Hard</option>
-          </select>
+            <label for="difficulty">Difficulty</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="normal">Normal</option>
+                <option value="hard">Hard</option>
+            </select>
         </div>
-      </form>
+    </form>
+</div>
+<div class="container">
+    <div id="game-container">
+        <h2>
+            <i class="fas fa-keyboard"></i>Speed Typer<i class="fas fa-keyboard"></i>
+        </h2>
+        <small>Type the following:</small>
+        <h1 id="word"></h1>
+        <input type="text" id="text" autocomplete="off" placeholder="Type word here."/>
+        <p class="time-container">Time Left: <span id="time">10s</span></p>
+        <p class="score-container">Score: <span id="score">0</span></p>
     </div>
+    <div class="end-game-container" id="end-game-container"></div>
+    <div class="high-score-board-entry" id="high-score-board-entry"></div>
+    <div id="high-score-board" class="hide"></div>
+    <div id="toast" class="toast"></div>
+</div>
+<script src="https://kit.fontawesome.com/f663e85456.js" crossorigin="anonymous"></script>
+<script src="game.js"></script>
+</body>
 
-    <div class="container">
-      <h2>
-        <i class="fas fa-keyboard"></i> Speed Typer
-        <i class="fas fa-keyboard"></i>
-      </h2>
-      <small>Type the following:</small>
-
-      <h1 id="word"></h1>
-
-      <input
-        type="text"
-        id="text"
-        autocomplete="off"
-        placeholder="Type word here."
-      />
-
-      <p class="time-container">Time Left: <span id="time">10s</span></p>
-
-      <p class="score-container">Score: <span id="score">0</span></p>
-
-      <div class="end-game-container" id="end-game-container"></div>
-    </div>
-
-    <script
-      src="https://kit.fontawesome.com/f663e85456.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="game.js"></script>
-  </body>
 </html>
